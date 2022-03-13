@@ -21,6 +21,7 @@ int cbinsearch(int *arr, int size, int value) {
     count += 1;
     k += 1;
   }
+  k = 0;
   while ((j - k >= 0) && (arr[j - k] == value)) {
     count += 1;
     k += 1;
