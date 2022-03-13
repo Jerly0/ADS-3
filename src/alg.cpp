@@ -9,20 +9,22 @@ int cbinsearch(int *arr, int size, int value) {
     int mid = (i + j) / 2;
     if (arr[mid] == value) {
       count += 1;
-      while ((j + k <= size) && (arr[j + k] == value)) {
-        count += 1;
-        k += 1;
-      }
-      while ((j - k >= 0) && (arr[j + k] == value)) {
-        count += 1;
-        k += 1;
-      }
+      break;
     } else if (arr[mid] > value) {
       j = mid;
     } else {
       i = mid + 1;
     }
   }
+  while ((j + k <= size) && (arr[j + k] == value)) {
+    count += 1;
+    k += 1;
+  }
+  while ((j - k >= 0) && (arr[j + k] == value)) {
+    count += 1;
+    k += 1;
+  }
+  
   if (count > 0) {
     return count;
   } else {
