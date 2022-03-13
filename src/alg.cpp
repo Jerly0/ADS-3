@@ -2,7 +2,7 @@
 
 int cbinsearch(int *arr, int size, int value) {
   int count = 0;
-  k = 1;
+  int k = 1;
   int i = 0;
   int j = size - 1;
   while (i < j) {
