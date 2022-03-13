@@ -2,12 +2,21 @@
 
 int cbinsearch(int *arr, int size, int value) {
   int count = 0;
+  k = 1;
   int i = 0;
   int j = size - 1;
   while (i < j) {
     int mid = (i + j) / 2;
     if (arr[mid] == value) {
       count += 1;
+      while ((j + k <= size) && (arr[j + k] == value)) {
+        count += 1;
+        k += 1;
+      }
+      while ((j - k >= 0) && (arr[j + k] == value)) {
+        count += 1;
+        k += 1;
+      }
     } else if (arr[mid] > value) {
       j = mid;
     } else {
