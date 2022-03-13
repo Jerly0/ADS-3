@@ -21,14 +21,14 @@ int cbinsearch(int *arr, int size, int value) {
     count += 1;
     k += 1;
   }
-  k = 0;
+  k = 1;
   while ((j - k >= 0) && (arr[j - k] == value)) {
     count += 1;
     k += 1;
   }
 
   if (count > 0) {
-    return count - 1;
+    return count;
   } else {
     return 0;
   }
